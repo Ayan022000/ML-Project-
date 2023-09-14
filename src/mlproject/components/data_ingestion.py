@@ -27,8 +27,8 @@ class DataIngestion:
             os.makedirs(os.path.dirname(self.ingestion_cofig.train_data_path),exist_ok=True)
             df.to_csv(self.ingestion_cofig.raw_data_path,index=False,header=True)
             train_set,test_set= train_test_split(df,test_size=0.25,random_state=42)
-            df.to_csv(self.ingestion_cofig.train_data_path,index=False,header=True)
-            df.to_csv(self.ingestion_cofig.test_data_path,index=False,header=True)
+            train_set.to_csv(self.ingestion_cofig.train_data_path,index=False,header=True)
+            test_set.to_csv(self.ingestion_cofig.test_data_path,index=False,header=True)
             
             logging.info("Data Ingestion Completed")
             
