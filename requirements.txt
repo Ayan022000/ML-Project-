@@ -6,5 +6,5 @@ pymysql
 scikit-learn
 matplotlib
 seaborn
-xgboost
+catboost
 #-e .
