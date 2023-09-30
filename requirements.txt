@@ -7,4 +7,5 @@ scikit-learn
 matplotlib
 seaborn
 catboost
+streamlit
 #-e .
