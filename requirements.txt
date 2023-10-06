@@ -9,4 +9,5 @@ seaborn
 catboost
 streamlit
 mlflow
+Flask
 #-e .

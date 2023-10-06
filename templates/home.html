@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+    <a href="https://github.com/Ayan022000/ML-Project-.git" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>Loan Approval Prediction - Ayan Majumdar</h1>
+    <div class="form-box">
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <div class="mb-3">
+                <label class="form-label">No of Dependents out of 5</label>
+                <input class="form-control" type="number" name=" no_of_dependents" placeholder="Enter No of Dependents" min='0' max='5' />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Education</label>
+                <select class="form-control" name=" education" placeholder="Enter your Education" required>
+                    <option class="placeholder" selected disabled value="">Select your Education</option>
+                    <option value=" Graduate">Graduate</option>
+                    <option value=" Not Graduate">Not Graduate</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Self Employed</label>
+                <select class="form-control" name=" self_employed" placeholder="Enter your emplyment" required>
+                    <option class="placeholder" selected disabled value="">Select your Employment</option>
+                    <option value=" Yes">Yes</option>
+                    <option value=" No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Annual Income</label>
+                <input class="form-control" type="number" name=" income_annum" placeholder="Enter Annual Income" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Loan Amount</label>
+                <input class="form-control" type="number" name=" loan_amount" placeholder="Enter Loan Amount" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Loan Term</label>
+                <input class="form-control" type="number" name=" loan_term" placeholder="Enter Loan Term" min='2' max='20' />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cibil Score</label>
+                <input class="form-control" type="number" name=" cibil_score" placeholder="Enter Cibil Score" min='300' max='900' />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Residential Asset Value</label>
+                <input class="form-control" type="number" name=" residential_assets_value" placeholder="Enter Residential Asset Value" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Commercial Asset Value</label>
+                <input class="form-control" type="number" name=" commercial_assets_value" placeholder="Enter Commercial Asset Value" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Luxury Asset Value</label>
+                <input class="form-control" type="number" name=" luxury_assets_value" placeholder="Enter Luxury Asset Value" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bank Asset Value</label>
+                <input class="form-control" type="number" name=" bank_asset_value" placeholder="Enter Bank Asset Value" />
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict Loan Approval" required />
+            </div>
+        </form>
+        <h2>The prediction is : Your Loan will {{results}}</h2>
+    </div>
+</body>
+</html>
